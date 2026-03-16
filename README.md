@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GitInsight
 
-## Getting Started
+GitInsight is a web application that analyzes a GitHub profile and generates insights about a developer's portfolio. By entering a GitHub username, the application retrieves public information from the GitHub API and displays statistics about repositories, stars, and programming languages.
 
-First, run the development server:
+The goal of this project is to help developers better understand the strengths of their GitHub portfolio and identify areas for improvement.
 
-```bash
+## How it works
+
+The user enters a GitHub username in the interface. The application sends a request to the GitHub API to retrieve profile information and repository data. This information is processed on the server to calculate statistics such as the total number of repositories, total stars, most starred repository, and the most frequently used programming languages.
+
+The application also generates a simple portfolio score and suggestions that help developers improve their GitHub presence.
+
+## Technologies used
+
+The project was built using Next.js with TypeScript and Tailwind CSS for the frontend interface. The GitHub REST API is used to retrieve public data from GitHub. Recharts is used to visualize language statistics.
+
+## Running the project locally
+
+Clone the repository and install the dependencies.
+
+npm install
+
+Start the development server.
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project optionally uses a GitHub API token to avoid rate limits.
 
-## Learn More
+Create a `.env.local` file and add:
 
-To learn more about Next.js, take a look at the following resources:
+GITHUB_TOKEN=your_github_token
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application will still work without a token but will have lower API rate limits.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Live demo
 
-## Deploy on Vercel
+The application is deployed on Vercel and can be accessed online.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project was created for a hackathon and is available for educational and demonstration purposes.
